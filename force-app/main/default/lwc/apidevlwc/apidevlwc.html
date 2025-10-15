@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="API Phone List">
+        <template if:true={phones}>
+            <template for:each={phones} for:item="phone">
+                <div key={phone.id} class="slds-box slds-m-around_small">
+                    <p><strong>ID:</strong> {phone.id}</p>
+                    <p><strong>Name:</strong> {phone.name}</p>
+                    <template if:true={phone.data}>
+                        <template if:true={phone.data.colour}>
+                        <p><strong>Color:</strong> {phone.data.colour}</p>
+                    </template>
+                        <template if:true={phone.data.capacity}>
+                        <p><strong>Capacity:</strong> {phone.data.capacity}</p>
+                    </template>
+                        <template if:true={phone.data.capacityGB}>
+                            <p><strong>CapacityGB:</strong> {phone.data.capacityGB}</p>
+                        </template>
+                        <template if:true={phone.data.price}>
+                        <p><strong>Price:</strong> {phone.data.price}</p>
+                        </template>
+                        <template if:true={phone.data.CPUmodel}>
+                        <p><strong>CPU Model:</strong> {phone.data.CPUmodel}</p>
+                    </template>
+                        <template if:true={phone.data.Harddisksize}>
+                        <p><strong>Hard Disk Size:</strong> {phone.data.Harddisksize}</p>
+                    </template>
+                         <template if:true={phone.data.Generation}> 
+                        <p><strong>Generation:</strong> {phone.data.Generation}</p>
+                         </template>
+                        <template if:true={phone.data.year}>
+                        <p><strong>year:</strong> {phone.data.year}</p>
+                    </template>
+                        <template if:true={phone.data.StrapColour}>
+                        <p><strong>StrapColour:</strong> {phone.data.StrapColour}</p>
+                    </template>
+                        <template if:true={phone.data.CaseSize}>
+                        <p><strong>CaseSize:</strong> {phone.data.CaseSize}</p>
+                    </template>
+                        <template if:true={phone.data.Description}>
+                        <p><strong>Description:</strong> {phone.data.Description}</p>
+                    </template>
+                        <template if:true={phone.data.Screensize}>
+                         <p><strong>Screensize:</strong> {phone.data.Screensize}</p>
+                        </template>
+                    </template>
+                </div>
+            </template>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template>
