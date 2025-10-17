@@ -1,7 +1,7 @@
 public  class pincode {
     public static void pincode(String Pincode) {
         HttpRequest request = new HttpRequest();
-         request.setEndpoint('https://api.postalpincode.in/pincode/' + Pincode);
+         request.setEndpoint('callout:postalcode/'+ Pincode);
          request.setMethod('GET');
          Http h= new Http();
          HttpResponse response = h.send(request);
